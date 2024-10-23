@@ -12,10 +12,7 @@ public class CustomList
 
     private int Size
     {
-        get
-        {
-            return _length;
-        }
+        get => _list.Length;
     }
 
     public int? Get(int index)

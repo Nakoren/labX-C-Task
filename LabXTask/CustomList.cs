@@ -168,15 +168,15 @@ public class CustomList<T>
 
     public void Sort(System.Func<T, T, int> equalFunc)
     {
-        for(int i=0;i< _length; i++)
+        for (int i = 0; i < _list.Length; i++)
         {
-            for(int j=i; j< _length-i; j++)
+            for (int j = 0; j < _list.Length - 1; j++)
             {
-                if (equalFunc(_list[j], _list[j + 1]) == 1)
+                if (equalFunc.Invoke(_list[j], _list[j + 1])==1)
                 {
-                    T temp = _list[j];
-                    _list[j] = _list[j + 1];
-                    _list[j + 1] = temp;
+                    T temp = _list[j + 1];
+                    _list[j + 1] = _list[j];
+                    _list[j] = temp;
                 }
             }
         }
